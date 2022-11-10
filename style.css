@@ -1,0 +1,255 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+
+    --bg-color: #000000;
+    --bg-input: #06181C;
+    --bg-button-fav-off: #065E7C;
+    --bg-button-fav-on: #FFFFFF;
+
+    --font-color: #E1E1E6;
+    --font-color-placeholder:#7C7C8A;
+    --font-color-button: #FFFFFF;
+    --font-color-action:#F75A68;
+
+    --border-table: #4A808C;
+    --bg-thead:#092D38;
+
+}
+
+body{
+    background-color: var(--bg-color);
+
+    font-size: 1.6rem;
+    font-family: "Roboto",sans-serif;
+    color: var(--font-color);
+}
+
+.emptyTable.hide, .hide {
+    display: none;
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+#app{
+    width: 112rem;
+    height: 100vh;
+    margin: 0 auto 8.7rem;
+    padding: 2rem;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 7rem;
+}
+
+header #logo{
+    width: 18.6rem;
+    height: 3.3rem;
+}
+
+header div{
+    display: flex;
+    gap: .8rem;
+}
+
+header input{
+    width: 46.2rem;
+    padding: 1.6rem;
+
+    background-color: var(--bg-input);
+
+    border: none;
+    border-radius: 5px;
+
+    color: var(--font-color-placeholder);
+}
+
+header button{
+    border: none;
+    border-radius: 5px;
+    background-color: var(--bg-button-fav-off);
+
+    padding: 1.2rem 3.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap:.8rem;
+}
+
+header button:hover, 
+header button:hover path,
+header button:hover span{
+    cursor: pointer;
+    background-color: var(--bg-button-fav-on);
+
+    color: var(--bg-button-fav-off);
+
+    fill:var(--bg-button-fav-off);
+}
+
+header span{
+    color: var(--font-color-button);
+    text-transform: uppercase;
+    font-size: 1.4rem;
+}
+
+main{
+    margin-top: 8.7rem;
+}
+
+#tableHeader{
+    background-color: var(--bg-thead);
+    text-align: left;
+
+    border: 1px solid var(--border-table);
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+}
+
+#tableHeader  tr th:nth-child(1){
+    width: 50.4rem;
+    padding: 1.6rem 0 1.6rem 4rem;
+    font-size: 2rem;
+}
+#tableHeader tr th:nth-child(2){
+    width: 21.8rem;
+    padding: 1.6rem 0 1.6rem 4rem;
+    font-size: 2rem;
+}
+#tableHeader  tr th:nth-child(3){
+    width: 21.8rem;
+    padding: 1.6rem 0 1.6rem 4rem;
+    font-size: 2rem;
+}
+#tableHeader tr th:nth-child(4){
+    width: 17.8rem;
+    padding: 1.6rem 0 1.6rem 4rem;
+    font-size: 2rem;
+}
+
+#tableBody{
+    position: relative;
+    width: 100%;
+    border-spacing: 0;
+}
+
+#tableBody tr td:nth-child(1){
+    display: flex;
+    gap: 1.6rem;
+    padding: 1.6rem 0 1.6rem 4rem;
+}
+#tableBody tr td:nth-child(2){
+    width: 21.3rem;
+    padding-left: 4rem;
+}
+#tableBody tr td:nth-child(3){
+    width: 21.2rem;
+    padding-left: 4rem;
+}
+#tableBody tr td:nth-child(4){
+    width: 17rem;
+    padding-left: 4rem;
+}
+
+#tableBody tr:nth-child(even){
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-table);
+}
+
+.user img{
+    width: 5.6rem;
+    border-radius: 50%;
+}
+
+.user a, .repositories, .followers{
+    text-decoration: none;
+    color: var(--font-color);
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.user p{
+    font-weight: bold;
+}
+
+.remove{
+    background: none;
+    border: none;
+
+    color: var(--font-color-action);
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.remove:hover{
+    cursor: pointer;
+    color: #f37782;
+}
+
+.emptyTable{
+    width: 108rem;
+    height: 62.4rem;
+
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border-table);
+    border-radius: 0 0 12px 12px;
+}
+
+.emptyTable div{
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+.emptyTable p{
+    font-family: 'Roboto Mono';
+    font-size: 4rem;
+    color: #4E5455;
+}
+
+.tableWithScrollbar{
+    max-height: 50rem;
+    overflow-y: overlay;
+    border: 1px solid var(--border-table);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+}
+
+::-webkit-scrollbar{
+    width: .6rem;
+    background: transparent;
+    padding-right: .8rem;
+}
+
+::-webkit-scrollbar-track{
+    background: transparent;
+    margin-bottom: 38rem;
+    
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--border-table);
+    border-radius: 10px;
+}
